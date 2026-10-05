@@ -1,0 +1,75 @@
+/* Fonts */
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Medium.woff2");
+  font-weight: 700;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+}
+
+/* header styling */
+#head {
+  background: whitesmoke;
+  border-radius: 50px;
+  border: 2px solid indianred;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-top: 15px;
+}
+
+#head .logo {
+  display: block;
+  width: 80px;
+  height: auto;
+  padding: 10px;
+}
+
+#head .contact-us {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  background: purple;
+  padding: 10px;
+}
+
+#head .items-list {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+a,
+li {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  #head .items-list {
+    gap: 12px;
+    font-size: 12px;
+    padding-left: 75px;
+  }
+
+  #head .logo {
+    width: 45px;
+  }
+  #head .contact-us {
+    display: none;
+  }
+}

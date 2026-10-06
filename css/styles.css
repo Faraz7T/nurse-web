@@ -11,6 +11,10 @@
   font-weight: 700;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Vazir", sans-serif;
 }
@@ -59,6 +63,118 @@ li {
   color: black;
 }
 
+.body {
+  background: darkturquoise;
+}
+
+.body .title {
+  margin-right: 40px;
+}
+
+.body .s-title {
+  margin-right: 20px;
+}
+
+.body .menu-list .in-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 20px;
+  width: 99%;
+}
+
+.body .menu-list .salmandan {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .salmandan .salmandan-image {
+  width: 180px;
+}
+
+.body .menu-list .taghzieh,
+.body .menu-list .amoozesh,
+.body .menu-list .tarikh,
+.body .menu-list .vaziate-salamat,
+.body .menu-list .akhlag {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .mafahim {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .daru .daru-image,
+.body .menu-list .amoozesh .amoozesh-image,
+.body .menu-list .tarikh .tarikh-image,
+.body .menu-list .vaziate-salamat .vaziate-salamat-image,
+.body .menu-list .akhlag .akhlag-image {
+  width: 180px;
+}
+
+.body .menu-list .mafahim .mafahim-image {
+  width: 180px;
+}
+
+.body .menu-list .daru {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .salamat .salamat-image {
+  width: 180px;
+}
+
+.body .menu-list .salamat {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .fanavari {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .akhlag-eslami {
+  border-radius: 30px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: inline;
+}
+
+.body .menu-list .akhlag-eslami .akhlag-eslami-image {
+  width: 180px;
+}
+
+.body .menu-list .taghzieh .taghzieh-image {
+  width: 180px;
+}
+
+.body .menu-list .fanavari .fanavari-image {
+  width: 180px;
+}
+
 @media (max-width: 480px) {
   #head .items-list {
     gap: 12px;
@@ -72,4 +188,45 @@ li {
   #head .contact-us {
     display: none;
   }
+}
+
+.menu-plan {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+  border-bottom: 4px solid black;
+}
+
+.table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
+.table {
+  background: cornsilk;
+  width: 90%;
+}
+
+.foot {
+  border-top: 2px solid black;
+  background: white;
+  display: flex;
+}
+
+.foot .foot-menu {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.foot .foot-menu .describe {
+  width: 50%;
+}
+
+.foot .foot-menu .contact {
+  width: 50%;
 }

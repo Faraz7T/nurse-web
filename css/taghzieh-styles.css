@@ -1,0 +1,170 @@
+/* Fonts */
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Medium.woff2");
+  font-weight: 700;
+}
+
+/* Base / Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+li {
+  text-decoration: none;
+  color: black;
+}
+
+.body {
+  background: darkturquoise;
+}
+
+/* Header */
+#head {
+  background: whitesmoke;
+  border-radius: 50px;
+  border: 2px solid indianred;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 1200px;
+  margin: 15px auto 0 auto;
+  justify-content: space-between;
+  padding: 8px 15px;
+  gap: 12px; /* کمک می‌کند در عرض‌های کم به هم نچسبند */
+}
+
+#head .logo {
+  display: block;
+  width: 70px;
+  height: auto;
+  padding: 8px;
+}
+
+#head .items-list {
+  list-style-type: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+#head .items-list .item a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap; /* جلوگیری از دو خط شدن */
+}
+
+#head .contact-us {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  background: purple;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+/* Main content */
+.body .title,
+.body .text {
+  margin: 25px 40px 0 0;
+}
+
+.body .title {
+  font-size: 1.8rem;
+}
+
+.body .text {
+  font-size: 1rem;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* تبلت و موبایل (<=768px) */
+@media screen and (max-width: 768px) {
+  #head {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 25px;
+    padding: 12px;
+  }
+
+  /* لوگو وسط */
+  .logo-c {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* منو وسط و با قابلیت wrap */
+  #head nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  #head .items-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* دکمه تماس وسط */
+  #head .contact-us {
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .body .title,
+  .body .text {
+    margin: 20px 18px 0 18px; /* توی موبایل از دو طرف فاصله بهتره */
+    text-align: center;
+  }
+}
+
+/* موبایل کوچک (<=480px) */
+@media screen and (max-width: 480px) {
+  #head .logo {
+    width: 64px;
+  }
+
+  #head .items-list .item a {
+    font-size: 0.9rem;
+  }
+
+  #head .contact-us {
+    font-size: 0.95rem;
+    padding: 7px 10px;
+  }
+
+  .body .title {
+    font-size: 1.4rem;
+  }
+
+  .body .text {
+    font-size: 0.95rem;
+  }
+}

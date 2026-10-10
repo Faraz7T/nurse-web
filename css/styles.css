@@ -1,3 +1,10 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Fonts */
 @font-face {
   font-family: Vazir;
@@ -17,9 +24,18 @@ html {
 
 body {
   font-family: "Vazir", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: darkturquoise;
 }
 
-/* header styling */
+a,
+li {
+  text-decoration: none;
+  color: black;
+}
+
+/* Header Styling */
 #head {
   background: whitesmoke;
   border-radius: 50px;
@@ -27,17 +43,37 @@ body {
   display: flex;
   align-items: center;
   width: 95%;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 15px auto 0 auto;
   justify-content: space-between;
-  padding: 0px 15px;
-  margin-top: 15px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #head .logo {
   display: block;
-  width: 80px;
+  width: 70px;
   height: auto;
-  padding: 10px;
+}
+
+#head .items-list {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+#head .items-list .item a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+#head .items-list .item a:hover {
+  color: purple;
 }
 
 #head .contact-us {
@@ -48,185 +84,239 @@ body {
   border-radius: 20px;
   color: white;
   background: purple;
-  padding: 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition:
+    transform 0.2s,
+    background 0.2s;
 }
 
-#head .items-list {
-  list-style-type: none;
-  display: flex;
-  gap: 30px;
+#head .contact-us:hover {
+  transform: scale(1.03);
+  background: #5c005c;
 }
 
-a,
-li {
-  text-decoration: none;
-  color: black;
+/* Main Content */
+.menu-list {
+  width: 100%;
 }
 
-.body {
-  background: darkturquoise;
+.title {
+  margin: 30px 40px 10px 0;
+  color: #1a1a1a;
 }
 
-.body .title {
-  margin-right: 40px;
+.s-title {
+  margin: 30px 30px 15px 0;
+  color: #1a1a1a;
 }
 
-.body .s-title {
-  margin-right: 20px;
-}
-
-.body .menu-list .in-menu {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  gap: 20px;
-  width: 99%;
-}
-
-.body .menu-list .salmandan {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .salmandan .salmandan-image {
-  width: 180px;
-}
-
-.body .menu-list .taghzieh,
-.body .menu-list .amoozesh,
-.body .menu-list .tarikh,
-.body .menu-list .vaziate-salamat,
-.body .menu-list .akhlag {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .mafahim {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .daru .daru-image,
-.body .menu-list .amoozesh .amoozesh-image,
-.body .menu-list .tarikh .tarikh-image,
-.body .menu-list .vaziate-salamat .vaziate-salamat-image,
-.body .menu-list .akhlag .akhlag-image {
-  width: 180px;
-}
-
-.body .menu-list .mafahim .mafahim-image {
-  width: 180px;
-}
-
-.body .menu-list .daru {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .salamat .salamat-image {
-  width: 180px;
-}
-
-.body .menu-list .salamat {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .fanavari {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .akhlag-eslami {
-  border-radius: 30px;
-  border: 2px solid indigo;
-  padding: 20px;
-  background: gold;
-  display: inline;
-}
-
-.body .menu-list .akhlag-eslami .akhlag-eslami-image {
-  width: 180px;
-}
-
-.body .menu-list .taghzieh .taghzieh-image {
-  width: 180px;
-}
-
-.body .menu-list .fanavari .fanavari-image {
-  width: 180px;
-}
-
-@media (max-width: 480px) {
-  #head .items-list {
-    gap: 12px;
-    font-size: 12px;
-    padding-left: 75px;
-  }
-
-  #head .logo {
-    width: 45px;
-  }
-  #head .contact-us {
-    display: none;
-  }
-}
-
+/* Schedule Table */
 .menu-plan {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 50px 0px;
+  display: block;
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px 0;
+  overflow-x: auto; /* اسکرول افقی روی موبایل بدون بیرون زدن از صفحه */
+  -webkit-overflow-scrolling: touch;
   border-bottom: 4px solid black;
-}
-
-.table,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 20px;
 }
 
 .table {
   background: cornsilk;
-  width: 90%;
+  width: 100%;
+  min-width: 650px; /* حداقل عرض تا جدول در موبایل خوانا بماند */
+  border-collapse: collapse;
+  text-align: center;
 }
 
+.table th,
+.table td {
+  border: 1px solid black;
+  padding: 12px 10px;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background: #ffeaa7;
+  font-weight: bold;
+}
+
+/* Cards Section */
+.in-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  gap: 25px;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+/* استایل مشترک تمام کارت‌ها */
+.in-menu section {
+  border-radius: 25px;
+  border: 2px solid indigo;
+  padding: 20px;
+  background: gold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.in-menu section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.in-menu section a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.in-menu section img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.in-menu section h2 {
+  font-size: 1.25rem;
+  margin: 8px 0;
+}
+
+.in-menu section h3 {
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #333;
+  margin: 0;
+}
+
+/* Footer Styling */
 .foot {
   border-top: 2px solid black;
   background: white;
-  display: flex;
+  width: 100%;
 }
 
 .foot .foot-menu {
   display: flex;
-  align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  gap: 30px;
 }
 
 .foot .foot-menu .describe {
   width: 50%;
+  line-height: 1.8;
 }
 
 .foot .foot-menu .contact {
-  width: 50%;
+  width: 45%;
+}
+
+.foot .foot-menu .contact details {
+  background: #f1f2f6;
+  border: 1px solid #ced6e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.foot .foot-menu .contact summary {
+  font-weight: bold;
+}
+
+.foot .foot-menu .contact p {
+  margin: 8px 0 0 0;
+  direction: ltr;
+  text-align: right;
+  color: #2ed573;
+  font-weight: bold;
+}
+
+/* =========================================
+   MEDIA QUERIES (تنظیمات تبلت و موبایل)
+   ========================================= */
+
+/* تبلت و موبایل‌های بزرگ (کمتر از 768px) */
+@media screen and (max-width: 768px) {
+  #head {
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 25px;
+    padding: 15px;
+  }
+
+  #head .items-list {
+    gap: 15px;
+    font-size: 0.95rem;
+  }
+
+  .title {
+    text-align: center;
+    margin: 25px 0 10px 0;
+    font-size: 1.6rem;
+  }
+
+  .s-title {
+    text-align: center;
+    margin: 25px 0 15px 0;
+    font-size: 1.4rem;
+  }
+
+  .foot .foot-menu {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .foot .foot-menu .describe,
+  .foot .foot-menu .contact {
+    width: 100%;
+  }
+}
+
+/* موبایل‌های کوچک‌تر (کمتر از 480px) */
+@media screen and (max-width: 480px) {
+  #head {
+    width: 92%;
+    padding: 12px;
+  }
+
+  #head .items-list {
+    flex-direction: row;
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+
+  #head .contact-us {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .in-menu section {
+    width: 85%; /* در صفحات خیلی کوچک هر کارت به صورت تمام‌عرض و شکیل نمایش داده می‌شود */
+    max-width: 280px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 6px;
+    font-size: 0.82rem;
+  }
 }
